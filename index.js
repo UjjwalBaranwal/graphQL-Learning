@@ -18,6 +18,16 @@ const resolvers = {
     authors() {
       return db.authors;
     },
+    review(_, args) {
+      const id = args.id;
+      return db.reviews.find((re) => re.id === id);
+    },
+    game(_, args) {
+      return db.games.find((el) => el.id === args.id);
+    },
+    author(_, args) {
+      return db.authors.find((el) => el.id === args.id);
+    },
   },
 };
 //server setup
